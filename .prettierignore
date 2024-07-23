@@ -1,0 +1,9 @@
+/node_modules
+/dist
+/.cache
+/api
+/.git
+yarn.json
+/build/
+/public/build
+/public/_build

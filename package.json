@@ -1,0 +1,56 @@
+{
+  "name": "schmaenjael.dev",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "start": "remix-serve build",
+    "dev": "concurrently \"npm:dev:*\"",
+    "build": "concurrently \"npm:build:*\"",
+    "script": "concurrently \"npm:script:*\"",
+    "dev:remix": "remix vite:dev",
+    "build:remix": "remix vite:build",
+    "script:https": "npx local-ssl-proxy --source 443 --target 3000",
+    "script:lint": "prettier --write --loglevel warn . && eslint --fix"
+  },
+  "pre-commit": [
+    "script:lint"
+  ],
+  "dependencies": {
+    "@remix-run/node": "^2.8.1",
+    "@remix-run/react": "^2.8.1",
+    "@remix-run/serve": "^2.8.1",
+    "@storyblok/react": "^3.0.9",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/remix": "2.8.1-patch.2",
+    "i18next": "^23.10.1",
+    "i18next-browser-languagedetector": "^7.2.0",
+    "isbot": "^5.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.8.1",
+    "@total-typescript/ts-reset": "^0.5.1",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.38.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.13",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.1.6",
+    "vite": "^5.1.0",
+    "vite-tsconfig-paths": "^4.2.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
